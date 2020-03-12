@@ -33,14 +33,16 @@ set incsearch
 nmap <Leader>NT :NERDTreeToggle<cr>
 "/ autocmd StdinReadPre * let s:std_in=1
 "/ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
+let NERDTreeHijackNetrw = 0
 
 "-----------------CONTROL-P---------------"
 "/ if this doesnt work, you need ctags
 "/ Mac is brew install ctags
 "/ Most 'nix is `sudo apt-get install exuberant-ctags`
-nmap <Leader>S :CtrlPBufTag 
-nmap <Leader>R :CtrlPMRUFiles  
+nmap <Leader>S :CtrlPBufTag<cr>
+nmap <Leader>R :CtrlPMRUFiles<cr>
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_match_window = 'order:ttb,min:1,max:30,results:30'
 
 
 "-----------------MAPPINGS---------------" 
@@ -57,6 +59,9 @@ augroup autsourcing
     autocmd BufWritePost .vimrc source %
 augroup END 
 
+
+"-----------------EDITOR---------------" 
+nmap <Leader>f :tag 
 
 "-----------------Spitting--------------"
 set splitbelow
