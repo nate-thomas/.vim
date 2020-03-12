@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/nthomas'
+let g:netrw_dirhist_7='/Users/nthomas/.vim'
+let g:netrw_dirhist_6='/Users/nthomas/Laracasts/Tutorial/app/Http/Controllers'
+let g:netrw_dirhist_5='/Users/nthomas/.vim'
+let g:netrw_dirhist_4='/Users/nthomas/Laracasts/Tutorial/app/Http/Controllers'
+let g:netrw_dirhist_3='/Users/nthomas/Laracasts/Tutorial/app/Http'
+let g:netrw_dirhist_2='/Users/nthomas/Laracasts/Tutorial/app/Http/Controllers'
+let g:netrw_dirhist_1='/Users/nthomas/Laracasts/Tutorial/app/Http'
+let g:netrw_dirhist_0='/Users/nthomas/Laracasts/Tutorial/app/Http/Controllers'
+let g:netrw_dirhist_9='/Users/nthomas/Laracasts/Tutorial/app/Http'
