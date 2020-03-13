@@ -11,6 +11,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'yorickpeterse/happy_hacking.vim.git'
 Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'skwp/greplace.vim'
 
 "All Plugins before here"
 call vundle#end()            " required

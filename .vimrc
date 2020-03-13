@@ -15,19 +15,21 @@ set guioptions-=R
 
 "-----------------EDITOR---------------" 
 syntax enable                                           "use syntax
-set number                                              "line numbers!
+set number relativenumber                               "line numbers!
 set tabstop=4                                           "4 spaces per tab
 set expandtab                                           "make tabs spaces
 set autoindent                                          "autoindent your code on brackets
 set softtabstop=0 shiftwidth=4 smarttab                 "remove a space instead of tab when you delete      
 set backspace=start,eol,indent                          "makes backspace function like normal
 set laststatus=2
+set foldcolumn=2
+
 
 
 "-----------------SEARCHING---------------"
 set hlsearch
 set incsearch
-
+set grepprg=grep 
 
 "-----------------NERD TREE---------------"
 nmap <Leader>NT :NERDTreeToggle<cr>
@@ -70,3 +72,4 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
