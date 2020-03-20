@@ -15,19 +15,23 @@ set t_CO=256
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
-set guioptions-=R
+set guioptions-=
+"fix file style
+let g:php_cs_fixer_level = "psr2"
 
 
 "-----------------EDITOR---------------" 
 syntax enable                                           "use syntax
-set number relativenumber                               "line numbers!
-set tabstop=4                                           "4 spaces per tab
-set expandtab                                           "make tabs spaces
 set autoindent                                          "autoindent your code on brackets
-set softtabstop=0 shiftwidth=4 smarttab                 "remove a space instead of tab when you delete      
+set autowriteall                                        "write when switching buffer
 set backspace=start,eol,indent                          "makes backspace function like normal
-set laststatus=2
+set complete=.,w,b,u
+set expandtab                                           "make tabs spaces
 set foldcolumn=2
+set laststatus=2
+set number relativenumber                               "line numbers!
+set softtabstop=4 shiftwidth=4 smarttab                 
+set tabstop=4                                           "4 spaces per tab
 
 
 
@@ -57,7 +61,6 @@ nmap <Leader>ev :tabedit ~/.vimrc<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
 
-
 "-----------------Auto-Commands--------------"
 "auto source vimrc on save"
 "autocmd! prevents n+1 on save, clears out group before executing
@@ -67,14 +70,44 @@ augroup autsourcing
 augroup END 
 
 
+"namespace import 
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+"expand import
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+
 "-----------------EDITOR---------------" 
 nmap <Leader>f :tag 
 
-"-----------------Spitting--------------"
+"-----------------Splitting--------------"
 set splitbelow
 set splitright
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
+
+
+"---------------SNIPPET------------------"
+
+ 
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+
+"----------------NOTES-------------"
+"redo tags with ctags -R --exclude
 
